@@ -49,3 +49,45 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function save() {
+    var lecturaAnterior = document.getElementById("lecturaAnt").value;
+    localStorage.setItem("LectAnt", lecturaAnterior);
+    document.getElementById("lecturaAnt").value = "";
+    window.location = "lectura1.html";
+}
+
+function saveLectura1() {
+    var lecturaUno = document.getElementById("lectura1").value;
+    localStorage.setItem("Lect1", lecturaUno);
+    document.getElementById("lectura1").value = "";
+    window.location = "lectura2.html";
+}
+
+function saveLectura2() {
+    var lecturaDos = document.getElementById("lectura2").value;
+    localStorage.setItem("Lect2", lecturaDos);
+    document.getElementById("lectura2").value = "";
+    window.location = "lectura3.html";
+}
+
+function saveLectura3() {
+    var lecturaTres = document.getElementById("lectura3").value;
+    localStorage.setItem("Lect3", lecturaTres);
+    document.getElementById("lectura3").value = "";
+    window.location = "lectura4.html";
+}
+
+function saveLectura4() {
+    var lecturaCuatro = document.getElementById("lectura4").value;
+    localStorage.setItem("Lect4", lecturaCuatro);
+    document.getElementById("lectura4").value = "";
+    window.location = "lectura5.html";
+}
+
+function saveLectura5() {
+    var lecturaCinco = document.getElementById("lectura5").value;
+    localStorage.setItem("Lect5", lecturaCinco);
+    document.getElementById("lectura5").value = "";
+    window.location = "resultado.html";
+}

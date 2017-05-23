@@ -43,35 +43,28 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>My First App</title>
+        <title>Lectura del Contador</title>
         
     </head>
 
     <body>
-        <script>
-            function saveLect1() {
-                var lecturaUno = document.getElementById("lectura1").value;
-                localStorage.setItem("Lect1", lecturaUno);
-                document.getElementById("lectura1").value = "";
-                window.location = "lectura2.htlml";
-            }
-        </script>
+
         <div>
             <center>
                 <div class="container">
-                    <div class="espacio">
-                        <p>De izquierda a derecha, ingrese el primer dato</p>
-                        <img src="img/lect1.jpg" class="espacio2"/>
+                    <div class="centrado">
+                        <p class="mediano">De izquierda a derecha, ingrese el primer numero</p>
+                        <img src="img/reloj1.png" class="form-group" alt="Primera aguja" />
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ej. 32351" id="lectura1">
+                                <input type="number" class="form-control entrada" placeholder="Ej. 3" id="lectura1">
                             </div>
                             <div class="form-group">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="saveLect1()">Ingresar</button>
+                                <button type="button" class="btn btn-primary btn-lg" onclick="saveLectura1()">Ingresar</button>
                             </div>
                         </form>
                         <a href="#" data-toggle="modal" data-target="#myModal">
-                            Que numero debo ingresar?
+                            Como encuentro la lectura anterior?
                         </a>
 
                       <!-- Modal -->
@@ -93,6 +86,7 @@
                           </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </center>
             <script type="text/javascript" src="cordova.js"></script>
