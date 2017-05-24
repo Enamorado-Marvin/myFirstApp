@@ -91,3 +91,18 @@ function saveLectura5() {
     document.getElementById("lectura5").value = "";
     window.location = "resultado.html";
 }
+
+function resultado() {
+    var lectAnte = localStorage.getItem("LectAnt");
+    var lectUno = localStorage.getItem("Lect1");
+    var lectDos = localStorage.getItem("Lect2");
+    var lectTres = localStorage.getItem("Lect3");
+    var lectCuatro = localStorage.getItem("Lect4");
+    var lectCinco = localStorage.getItem("Lect5");
+    
+    var lectActual = parseInt(lectUno + lectDos + lectTres + lectCuatro + lectCinco);
+    
+    var kwh = parseInt(lectAnte) - lectActual;
+    
+    document.getElementById('output').innerHTML = kwh;
+}
