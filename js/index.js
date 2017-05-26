@@ -50,6 +50,10 @@ var app = {
     }
 };
 
+function loadHeader (id) {
+    
+}
+
 function save() {
     var lecturaAnterior = document.getElementById("lecturaAnt").value;
     localStorage.setItem("LectAnt", lecturaAnterior);
@@ -102,7 +106,7 @@ function resultado() {
     
     var lectActual = parseInt(lectUno + lectDos + lectTres + lectCuatro + lectCinco);
     
-    var kwh = parseInt(lectAnte) - lectActual;
+    var kwh = lectActual - parseInt(lectAnte);
     
     document.getElementById('output').innerHTML = kwh;
 }
