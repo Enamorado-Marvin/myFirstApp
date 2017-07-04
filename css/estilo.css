@@ -200,3 +200,35 @@ p.copyright {
     padding: 6px 0;
     font-weight: normal;
 }
+
+.colorg {
+    max-width: 600px;
+    width: 80%;
+    background: #f8f8f8;
+    margin-top: 2%;
+    padding: 10px;
+    transition: 1s ease;
+}
+.body-text {
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.colorg:hover {
+    background: #008aaa;
+    color: #fff;
+    transition: 1s ease;
+}
+.box {
+  margin: 30px;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+}
+.box.horizTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+}
