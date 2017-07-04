@@ -1,100 +1,139 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
         <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-        <!-- Good default declaration:
-        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-            * Enable inline JS: add 'unsafe-inline' to default-src
-            * Enable eval(): add 'unsafe-eval' to default-src
-        * Create your own at http://cspisawesome.com
-        -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Lectura del Contador</title>
-        
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+        <title>CIT 261 Topics</title>
     </head>
     <body>
-
+    <center>
+        <h1>Topics for CIT 261 - Marvin Enamorado</h1>
         <div>
-            <center>
-                <div class="container">
-                    <div class="centrado">
-                        <p class="grande">Ingrese su lectura anterior</p>
-                        <form>
-                            <div class="form-group">
-                                <input type="number" class="form-control entrada" placeholder="Ej. 32351" id="lecturaAnt">
-                            </div>
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary btn-lg" onclick="save()">Ingresar</button>
-                            </div>
-                        </form>
-                        <a href="#" data-toggle="modal" data-target="#myModal">
-                            Como encuentro la lectura anterior?
-                        </a>
-
-                      
+            <div>
+                <div class="colorg">
+                    <p class="body-text">Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</p>
+                </div>
+                <script type="text/javascript">
+                    
+                    function multiplicationTable() {
+                        var numero = parseInt(document.getElementById('number').value);
+                        var text="";
+                        var n1 = 1;
+                        var n2 = 12;
+                        while (n1 <= n2) {
+                                text += "<br>" + numero + " x " + n1 + " = " + numero*n1;
+                                n1++;
+                        }
+                        document.getElementById('demo').innerHTML = text;
+                    }
+                    function clearAll() {
+                        document.getElementById('demo').innerHTML = "";
+                        document.getElementById('number').value = "";
+                    }
+		</script>
+		<p>Enter the number you want for multiplication table:</p>
+		<input type="text" id="number">
+		<button onclick="multiplicationTable()">Click to see table</button>
+                <button onclick="clearAll()">Clear</button>
+		<p id="demo"></p>
+                
+                    <div class="colorg">
+                        <p class="body-text">Object Creation Functions, Inheritance, Properties, Methods,<br/>  Instantiation</p>
                     </div>
-                    
-                    <!-- Modal -->
-                      <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                    <p>An object is variable but they can have many values</p>
+                        <script type="text/javascript">
+                            function estudiante(){
+                                var student = {name: "Marvin", lastName: "Enamorado", age: "35"};
+                                document.getElementById('output').innerHTML = student.name + " " + student.lastName;
+                            }
+                            function clearAgain() {
+                                document.getElementById('output').innerHTML = "";
+                            }
+                        </script>
+                        <button onclick="estudiante()">Retrieve Student</button>
+                        <button onclick="clearAgain()">Clear</button>
+                        <p id="output"></p>
+                    </div>
 
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Como Encontrar la Lecura Anterior</h4>
-                            </div>
-                            <div class="modal-body">
-                                <img src="img/recibo-luz.png" class="img-responsive"/>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            </div>
-                          </div>
-                        </div>
-                    
-                </div>
-                </div>
-            </center>
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-            <script type="text/javascript">
-                app.initialize();
-            </script>
-        </div>
+                    <div class="colorg">
+                        <p class="body-text">Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</p>
+                    </div>
+                    <p></p>
+                    <script>
+                            function save() {
+                                    var name = document.getElementById("name").value;
+                                    var lastn = document.getElementById("lastname").value;
+                                    localStorage.setItem("Name", name);
+                                    localStorage.setItem("Lastname", lastn);
+                                    document.getElementById("name").value = "";
+                                    document.getElementById("lastname").value = "";
+                                }
+                            function retrieve() {       
+                                    var nombre = localStorage.getItem("Name");
+                                    var apellido = localStorage.getItem("Lastname");
+                                    document.getElementById("name1").innerHTML = nombre;
+                                    document.getElementById("lastn").innerHTML = apellido;
+                            }
+                        </script>
+                        <input type="text" placeholder="Name" id="name">
+                        <input type="text" placeholder="Last Name" id="lastname">
+                        <button id="save-button" onclick="save()">Save</button>
+
+                        <p>Stored Name: <label id="name1"></label></p>
+                        <p>Stored Last Name: <label id="lastn"></label></p>
+                        <button id="button-load" onclick="retrieve()">Show Elements</button>
+                        <p>Try refreshing the page, and then click the button "Show Elements" again. The data will be 
+                        displayed because it is stored on the browser.</p>
+            </div>
+            <div class="row">
+
+                    <div class="colorg">
+                        <p class="body-text"> Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</p>
+                    </div>
+                    <script>
+                    function myFunction() {
+                        document.getElementById("myElement").style.right = "100px";
+                    }
+                    </script>
+                    <div></div>
+                    <button onclick="myFunction()">Try it</button>
+
+                    <div id="myElement">
+                      <h1>My Element</h1>
+                    </div>
+
+                    <div class="colorg">
+                        <p class="body-text">HTML5 Tags - Video, Audio, and Canvas</p> 
+                    </div>
+
+                    <p>Canvas</p>
+                    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+                    Your browser does not support the HTML5 canvas tag.</canvas>
+
+                    <script>
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(200,100);
+                    ctx.stroke();
+                    </script><br/>
+                    <p>Video</p>
+                    <video width="400" controls>
+                      <source src="Internet_de_las_Cosas.mp4" type="video/mp4">
+                    </video>
+                    <br/>
+                    <p>Audio</p>
+                    <audio controls>
+                      <source src="sia.ogg" type="audio/ogg">
+                      <source src="sia.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+
+
+            </div>
+    </center>
     </body>
 </html>
