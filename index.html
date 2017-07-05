@@ -40,6 +40,35 @@
                 <button onclick="clearAll()">Clear</button>
 		<p id="demo"></p>
                 
+                <p>Example of parameter: complete the phrase</p>
+                My favorite music is: <input type="text" id="param" />
+                <button onclick="getParam(document.getElementById('param').value)">Enter</button>
+                <script>
+                    function getParam(music){
+                        var favorite = music;
+                        alert("My favorite music is " + favorite);
+                    }
+                </script>
+                
+                <p>Arrays</p>
+                color 1 <input type="text" id="uno"/><br><br>
+                color 2 <input type="text" id="dos"/><br><br>
+                color 3 <input type="text" id="tres"/><br><br>
+                <button onclick="myArrayFunction()">Enter</button>
+
+                <p id="accessarrays"></p>
+
+                <script>
+                function myArrayFunction(){
+                var first = document.getElementById('uno').value;
+                var second = document.getElementById('dos').value;
+                var third = document.getElementById('tres').value;
+                var colors = [first, second, third];
+                document.getElementById("accessarrays").innerHTML = colors;
+                }
+                </script>
+                
+                
                     <div class="colorg">
                         <p class="body-text">Object Creation Functions, Inheritance, Properties, Methods,<br/>  Instantiation</p>
                     </div>
