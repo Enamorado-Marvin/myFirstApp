@@ -88,25 +88,25 @@
                         <p>Try refreshing the page, and then click the button "Show Elements" again. The data will be 
                         displayed because it is stored on the browser.</p>
             </div>
-            <div class="row">
+            <div>
 
                     <div class="colorg">
-                        <p class="body-text"> Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</p>
+                        <p class="body-text">Manipulating CSS class Properties Using JavaScript</p>
                     </div>
                     <script>
                     function myFunction() {
-                        document.getElementById("myElement").style.right = "100px";
+                        document.getElementById("myElement").style.color = "red";
+                    }
+                    function myFunction2() {
+                        document.getElementById("myElement").style.color = "black";
                     }
                     </script>
                     <div></div>
-                    <button onclick="myFunction()">Try it</button>
+                    <button onclick="myFunction()">Change color to red</button>
+                    <button onclick="myFunction2()">Change color to black</button>
 
                     <div id="myElement">
-                      <h1>My Element</h1>
-                    </div>
-
-                    <div class="colorg">
-                        <p class="body-text">HTML5 Tags - Video, Audio, and Canvas</p> 
+                      <h1>The color of this text will change</h1>
                     </div>
 
                     <p>Canvas</p>
