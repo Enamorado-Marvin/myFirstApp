@@ -93,6 +93,7 @@
                     <div class="colorg">
                         <p class="body-text">Manipulating CSS class Properties Using JavaScript</p>
                     </div>
+                <br>
                     <script>
                     function myFunction() {
                         document.getElementById("myElement").style.color = "red";
@@ -108,17 +109,34 @@
                     <div id="myElement">
                       <h1>The color of this text will change</h1>
                     </div>
-
-                    <p>Canvas</p>
-                    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-                    Your browser does not support the HTML5 canvas tag.</canvas>
-
+                    <div class="colorg">
+                        <p class="body-text">HTML5 Tags - Video, Audio, and Canvas</p>
+                    </div><br>
+                    <button onclick="firstCanvas()">First Canvas</button>
+                    <button onclick="secondCanvas()">Second Canvas</button>
+                    <button onclick="clearCanvas()">Clear Canvas</button>
+                    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
                     <script>
-                    var c = document.getElementById("myCanvas");
-                    var ctx = c.getContext("2d");
-                    ctx.moveTo(0,0);
-                    ctx.lineTo(200,100);
-                    ctx.stroke();
+                    function firstCanvas(){
+                        var c = document.getElementById("myCanvas");
+                        var canvas = c.getContext("2d");
+                        canvas.moveTo(0,0);
+                        canvas.lineTo(200,100);
+                        canvas.stroke();
+                    }
+                    function secondCanvas(){
+                        var c = document.getElementById("myCanvas");
+                        var canvas = c.getContext("2d");
+                        canvas.moveTo(100,0);
+                        canvas.lineTo(100,200);
+                        canvas.stroke();
+                    }
+                    
+                    function clearCanvas()
+                    {
+                        location.reload(true);
+                    }
+                    
                     </script><br/>
                     <p>Video</p>
                     <video width="400" controls>
