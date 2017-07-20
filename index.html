@@ -111,7 +111,7 @@
                                     document.getElementById("name").value = "";
                                     document.getElementById("lastname").value = "";
                                 }
-                            function retrieve() {       
+                            function retrieve() {     
                                     var nombre = localStorage.getItem("Name");
                                     var apellido = localStorage.getItem("Lastname");
                                     document.getElementById("name1").innerHTML = nombre;
@@ -127,6 +127,99 @@
                         <button id="button-load" onclick="retrieve()">Show Elements</button>
                         <p>Try refreshing the page, and then click the button "Show Elements" again. The data will be 
                         displayed because it is stored on the browser.</p>
+                        
+                        <script>
+                            window.onload = function(){
+                                document.querySelector('#buttonSaveStudent').addEventListener('click', saveStudent);
+                                studentTable();
+                            };
+                                
+                                function saveStudent(){
+                                var gName = document.querySelector('#sname').value;
+                                var gLastName = document.querySelector('#slastName').value;
+                                var gCountry = document.querySelector('#scountry').value;
+                                    
+                                addStudentToStorage(gName, gLastName, gCountry);
+                                studentTable();
+                            }
+                            
+                            function studentTable(){
+                                var list = getStudentList();
+                                tbody = document.querySelector('#studentTable tbody');
+                                
+                                tbody.innerHTML = '';
+                                
+                                for(var i = 0; i < list.length; i++){
+                                    var row = tbody.insertRow(i);
+                                        nameCell = row.insertCell(0);
+                                        lastNameCell = row.insertCell(1);
+                                        countryCell = row.insertCell(2);
+                                    
+                                    nameCell.innerHTML = list[i].name;
+                                    lastNameCell.innerHTML = list[i].lastName;
+                                    countryCell.innerHTML = list[i].country;
+                                    
+                                    tbody.appendChild(row);
+                                }
+                            }
+                            
+                            var studentList = [];
+                            
+                            function addStudentToStorage(sname, slastName, scountry){
+                                var newStudent = {
+                                    name : sname,
+                                    lastName : slastName,
+                                    country : scountry
+                                };
+
+                                studentList.push(newStudent);
+                                localStorageStudentList(studentList);
+                            };
+                            
+                            function getStudentList(){
+                                var storedList = localStorage.getItem('localStudentList');
+                                if(storedList === null){
+                                    studentList = [];
+                                }else{
+                                    studentList = JSON.parse(storedList);
+                                }
+                                return studentList;
+                            }
+                            
+                            function localStorageStudentList(sList){
+                                localStorage.setItem('localStudentList', JSON.stringify(sList));
+                            }
+                        </script>
+                        
+                        <p>Local Storage for Array with JSON</p>
+                        <div class="contenedor">
+                            <div class="formulario">
+                                <form>
+                                    <label>Name</label>
+                                    <input type="text" id="sname" /><br><br/>
+                                    <label>Last Name</label>
+                                    <input type="text" id="slastName"><br><br/>
+                                    <label>Country</label>
+                                    <input type="text" id="scountry"><br><br/>
+                                    <button type="button" id="buttonSaveStudent">Save</button>
+                                </form>
+                            </div>
+                            <div class="tabla">
+                                <table id="studentTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Last Name</th>
+                                            <th>Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="limpiar"></div>
             </div>
             <div>
 
@@ -154,28 +247,26 @@
                     </div><br>
                     <button onclick="firstCanvas()">First Canvas</button>
                     <button onclick="secondCanvas()">Second Canvas</button>
-                    <button onclick="clearCanvas()">Clear Canvas</button>
+                    <button onclick="eraseCanvas()">Clear Canvas</button>
                     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
                     <script>
-                    function firstCanvas(){
-                        var c = document.getElementById("myCanvas");
-                        var canvas = c.getContext("2d");
-                        canvas.moveTo(0,0);
-                        canvas.lineTo(200,100);
-                        canvas.stroke();
-                    }
-                    function secondCanvas(){
-                        var c = document.getElementById("myCanvas");
-                        var canvas = c.getContext("2d");
-                        canvas.moveTo(100,0);
-                        canvas.lineTo(100,200);
-                        canvas.stroke();
-                    }
-                    
-                    function clearCanvas()
-                    {
-                        location.reload(true);
-                    }
+                        function firstCanvas(){
+                            var c = document.getElementById("myCanvas");
+                            var canvas = c.getContext("2d");
+                            canvas.moveTo(0,0);
+                            canvas.lineTo(200,100);
+                            canvas.stroke();
+                        }
+                        function secondCanvas(){
+                            var c = document.getElementById("myCanvas");
+                            var canvas = c.getContext("2d");
+                            canvas.moveTo(100,0);
+                            canvas.lineTo(100,200);
+                            canvas.stroke();
+                        }
+                        function eraseCanvas() {
+                            
+                        }
                     
                     </script><br/>
                     <p>Video</p>
@@ -189,8 +280,6 @@
                       <source src="sia.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                     </audio>
-
-
             </div>
     </center>
     </body>
