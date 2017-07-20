@@ -218,17 +218,25 @@ p.copyright {
     color: #fff;
     transition: 1s ease;
 }
-.box {
-  margin: 30px;
-  height: 50px;
-  width: 50px;
-  background-color: blue;
+
+.contenedor{
+    width: 700px
 }
-.box.horizTranslate {
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
-  transition: 3s;
-  margin-left: 50% !important;
+
+.formulario, .tabla{
+    padding: 10px;
+    float: left;
+}
+
+table{
+    font-weight: normal;
+    text-align: center;
+    width: 400px;
+}
+th, td{
+    border-bottom: 1px solid #000;
+}
+
+.limpiar{
+    clear: both;
 }
